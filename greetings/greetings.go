@@ -17,8 +17,7 @@ func Hello(name string) (string,error){
   }
   // message variable is dynamically typeset
   // := operator is used for declaring and initializing
-  //  message := fmt.Sprintf(selectRandomFormat(),name)
-  message := fmt.Sprintf(selectRandomFormat())
+   message := fmt.Sprintf(selectRandomFormat(),name)
   // so normally this would be the case for variable declaration
   var tmp string
   tmp = "GOはなんですか。"
