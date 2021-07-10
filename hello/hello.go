@@ -10,6 +10,24 @@ import(
 )
 
 func main(){
+  callToHellos()
+}
+
+func callToHellos(){
+  // keeping a log of events
+  log.SetPrefix("greetings: ")
+  // disabling certain properties
+  log.SetFlags(0)
+  // a slice of name
+  names:= []string{"Alpha","Beta","Gamma"}
+  messages, err := greetings.Hellos(names)
+  if(err !=nil){
+	log.Fatal(err)
+  }
+  fmt.Println(messages)
+}
+
+func callToHello(){
   // keeping a log of events
   log.SetPrefix("greetings: ")
   // disabling certain properties
@@ -28,3 +46,4 @@ func main(){
   }
   fmt.Println(message1)
 }
+

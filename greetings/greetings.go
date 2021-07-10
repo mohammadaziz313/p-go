@@ -27,6 +27,22 @@ func Hello(name string) (string,error){
   return message,nil
 }
 
+func Hellos(names []string)(map[string]string , error){
+	// mapping names to messages
+	messages := make(map[string]string)
+	// impressive for loop structure
+	// Java doesn't allow sending back the index of array
+	for _,name := range names{
+		message , err := Hello(name)
+		if(err != nil){
+			return nil, err
+		}
+		messages[name] = message
+	}
+	return messages,nil
+}
+
+
 // sets initial value of rand
 func init(){
   rand.Seed(time.Now().UnixNano())
